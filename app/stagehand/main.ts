@@ -5,10 +5,12 @@ export async function main({
   page,
   // context,
   stagehand,
+  title,
 }: {
   page: Page; // Playwright Page with act, extract, and observe methods
   // context: BrowserContext; // Playwright BrowserContext
   stagehand: Stagehand; // Stagehand instance
+  title: string;
 }) {
   console.log("Starting Chart Meme Generation...");
 
@@ -25,8 +27,6 @@ export async function main({
     });
 
     await page.click('div.cha-type[data-type="donut"]');
-
-    const title = "Me trying to study";
 
     console.log("Setting Chart Title...");
     const titleres = await page.act({
